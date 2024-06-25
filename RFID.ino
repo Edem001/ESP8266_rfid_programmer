@@ -87,6 +87,8 @@ void readSegment_1k(){
     Serial.println(readBlock(i, &(cardContents[(i-1) * 16 * 4])));
   }
 
+  rfc.PICC_DumpToSerial(&rfc.uid);
+
   Serial.println("------------------Output array----------------");
   printArray(&cardContents[0], sizeof(cardContents));
 }
